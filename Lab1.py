@@ -51,6 +51,9 @@ print(sum2)
 
 print(df['Age'])
 
+
+
+
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 scaler = StandardScaler()
 
@@ -60,7 +63,35 @@ scaler = StandardScaler()
 #print('--------')
 #print(df['Age'])
 
-print(df['Cabin'])
-df = pd.get_dummies(df, columns=['Cabin'], drop_first=True)
+#print(df['Cabin'])
+#df = pd.get_dummies(df, columns=['Cabin'], drop_first=True)
+#print('--------')
+#print(df)
+
+#print(df['Name'])
+#df = pd.get_dummies(df, columns=['Name'], drop_first=True)
+#print('--------')
+#print(df)
+
+print(df['Sex'])
+df = pd.get_dummies(df, columns=['Sex'], drop_first=True)
 print('--------')
 print(df)
+
+#print(df['Embarked'])
+#df = pd.get_dummies(df, columns=['Embarked'], drop_first=True)
+#print('--------')
+#print(df)
+
+
+#print(df['Ticket'])
+#df = pd.get_dummies(df, columns=['Ticket'], drop_first=True)
+#print('--------')
+#print(df)
+df = df.drop(['Ticket'], axis='columns')
+df = df.drop(['Embarked'], axis='columns')
+df = df.drop(['Name'], axis='columns')
+df = df.drop(['Cabin'], axis='columns')
+
+df.to_csv("Titanic-Dataset2.csv", index=False, sep=',')
+
