@@ -52,7 +52,10 @@ print(sum2)
 print(df['Age'])
 
 
-
+#print(df['Age'])
+#df = pd.get_dummies(df, columns=['Age'], drop_first=True)
+#print('--------')
+#print(df)
 
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 scaler = StandardScaler()
